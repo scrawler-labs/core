@@ -9,12 +9,12 @@
 namespace Scrawler\Service;
 
 use Scrawler\Scrawler;
-use\Scrawler\Arca\Database as Arca;
-use\Scrawler\Arca\Model;
+use \Scrawler\Arca\Database as Arca;
+use \Scrawler\Arca\Model;
 
 class Database extends Arca
 {
-    public __construct()
+    public function __construct()
     {
         $config = Scrawler::engine()->config()->all();
         $connectionParams = array(
@@ -28,7 +28,7 @@ class Database extends Arca
     }
   
     /**
-     * Bind all value from incoming request to model 
+     * Bind all value from incoming request to model
      * and saves it.
      *
      * @param Model|String $model
@@ -49,7 +49,7 @@ class Database extends Arca
     }
 
     /**
-     * Bind all value from incoming request to model 
+     * Bind all value from incoming request to model
      *
      * @param Model|String $model
      * @return Model
