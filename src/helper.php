@@ -3,18 +3,6 @@ use Scrawler\Scrawler;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
- * Depricated function use app() insted
- * @depricated
- * @return Object \Scrawler\Scrawler
- */
-if (!function_exists('s')) {
-    function s()
-    {
-        return Scrawler::engine();
-    }
-}
-
-/**
  * Helper function to return instance of scrawler
  *
  * @return Object \Scrawler\Scrawler
@@ -108,16 +96,6 @@ if (!function_exists('view')) {
         }
     }
 
-    /**
-     * Helper function to check if session has a key
-     * @depricated
-     */
-    if (!function_exists('session_has')) {
-        function session_has($key)
-        {
-            return flash_has($key);
-        }
-    }
 
    
    if (!function_exists('flash_has')) {

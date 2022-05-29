@@ -74,8 +74,8 @@ class Session extends \Symfony\Component\HttpFoundation\Session\Session
     }
 
     /**
-     * Emulate legacy flash function
-     * Since 2.3.0 flash function now returns flash bag too
+     *
+     * Since 3.0.0 flash function now returns flash bag
      *
      * @param string $type
      * @param string|array $messages
@@ -86,14 +86,6 @@ class Session extends \Symfony\Component\HttpFoundation\Session\Session
         if (!is_null($messages)) {
             $this->getFlashBag()->set($type, [$messages]);
         } else {
-            if (!is_null($type)) {
-                //hacky function to emulate old behavior
-                $messages = $this->getFlashBag()->get($type);
-                if (isset($messages[0])) {
-                    return $messages[0];
-                }
-                return '';
-            }
             return $this->getFlashBag()->all();
         }
     }
